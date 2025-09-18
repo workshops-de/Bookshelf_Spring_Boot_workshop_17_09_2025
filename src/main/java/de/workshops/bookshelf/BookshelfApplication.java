@@ -11,5 +11,4 @@ public class BookshelfApplication {
 		MDC.put( "user", "Birgit");
 		SpringApplication.run(BookshelfApplication.class, args);
 	}
-
 }

@@ -1,0 +1,30 @@
+###
+GET http://localhost:8080/book
+
+###
+@isbn=978-3826655487
+GET http://localhost:8080/book/{{isbn}}
+
+###
+@author=Robert
+GET http://localhost:8080/book?author={{author}}
+
+###
+POST http://localhost:8080/book/search
+Content-Type: application/json
+
+{
+  "isbn": "978-0201633610",
+  "title": "Clean",
+  "other": "something else"
+}
+
+###
+POST http://localhost:8080/book/search
+Content-Type: application/json
+
+{
+  "isbn": "978-020163361000000000",
+  "title": "Clean",
+  "other": "something else"
+}
