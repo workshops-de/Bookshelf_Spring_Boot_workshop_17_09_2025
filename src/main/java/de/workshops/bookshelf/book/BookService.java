@@ -36,4 +36,8 @@ class BookService {
         .toList();
   }
 
+  public Book createBook(Book book) {
+    return bookRepository.saveBook(book);
+
+  }
 }
