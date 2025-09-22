@@ -1,0 +1,13 @@
+application:
+  title: '@project.name@'
+  version: '@project.version@'
+
+#debug: true
+swagger:
+  config:
+    title: 'Bookshelf API'
+    version: '1.0.0'
+    capacity: 2000
+    license:
+      name: 'MIT'
+      url: 'https://opensource.org/licenses/MIT'

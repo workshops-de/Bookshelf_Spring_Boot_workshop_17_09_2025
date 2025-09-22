@@ -2,6 +2,7 @@ package de.workshops.bookshelf.book;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.workshops.bookshelf.JsonTestConfiguration;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,7 +19,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //@SpringBootTest
 //@AutoConfigureMockMvc
 @WebMvcTest(BookRestController.class)
-@Import({BookService.class, BookRepository.class})
+@Import({BookService.class, BookRepository.class, JsonTestConfiguration.class})
+//@Import({BookService.class, BookRepository.class})
 class BookRestControllerMockMvcTest {
 
   @Autowired
@@ -46,4 +48,12 @@ class BookRestControllerMockMvcTest {
         .andDo(print())
         .andExpect(status().isBadRequest());
   }
+
+//  @TestConfiguration
+//  static class TestConfig {
+//    @Bean
+//    public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
+//      return builder -> builder.featuresToEnable(SerializationFeature.INDENT_OUTPUT);
+//    }
+//  }
 }

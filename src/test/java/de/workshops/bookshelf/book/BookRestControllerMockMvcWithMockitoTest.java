@@ -79,7 +79,8 @@ class BookRestControllerMockMvcWithMockitoTest {
 
     mockMvc.perform(get("/book/123456789"))
         .andDo(print())
-        .andExpect(status().isNoContent());
+        .andExpect(status().isNoContent())
+        .andReturn();
   }
 
   @Test

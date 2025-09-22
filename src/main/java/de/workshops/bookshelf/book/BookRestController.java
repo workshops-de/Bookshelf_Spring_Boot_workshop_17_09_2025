@@ -38,7 +38,7 @@ class BookRestController {
   }
 
   @GetMapping(params = "author")
-  List<Book> getBooksByAuthor(@RequestParam @Size(min = 3) String author) {
+  List<Book> getBooksByAuthor(@RequestParam(required = false) @Size(min = 3) String author) {
     return bookService.getBooksByAuthor(author);
   }
 
